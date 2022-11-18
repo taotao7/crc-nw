@@ -1,0 +1,39 @@
+{
+  "name": "crc-nw",
+  "version": "0.0.1",
+  "description": "node and webassembly libraries for crc validation",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "node-addon-api": "^5.0.0",
+    "node-gyp": "^9.3.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "build": "rimraf build && node-gyp rebuild",
+    "compile_json": "node-gyp configure --release -- -f gyp.generator.compile_commands_json.py && mv Release/* ./ && rimraf Release && rimraf Debug",
+    "test": "vitest run"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "vitest": "^0.25.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taotao7/crc-nw.git"
+  },
+  "keywords": [
+    "crc",
+    "webassembly",
+    "node",
+    "crc64"
+  ],
+  "author": "taotao7",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taotao7/crc-nw/issues"
+  },
+  "homepage": "https://github.com/taotao7/crc-nw#readme"
+}
